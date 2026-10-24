@@ -42,6 +42,24 @@ Content-Type: application/json
 
 {"titulo":"Mostra de Teatro","participantes":5001}
 
+### Cadastrar com 422 (acima do limite de 5000)
+POST {{baseUrl}}/eventos
+Content-Type: application/json
+
+{"titulo":"Mega Festival","participantes":5001}
+
+### Título ausente: 400
+POST {{baseUrl}}/eventos
+Content-Type: application/json
+
+{"participantes":100}
+
+### ID inexistente: 404
+GET {{baseUrl}}/eventos/9999
+
+### ID não numérico: 400
+GET {{baseUrl}}/eventos/abc
+
 ### Excluir: 204 sem corpo
 DELETE {{baseUrl}}/eventos/1
 

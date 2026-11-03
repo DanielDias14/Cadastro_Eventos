@@ -4,11 +4,13 @@ API REST em Java para cadastrar os eventos de um centro cultural, construída so
 
 ## Integrantes
 
-| Nome | Responsabilidade principal |
-|------|----------------------------|
-| _Nome 1_ | _preencher_ |
-| _Nome 2_ | _preencher_ |
-| _Nome 3_ | _preencher_ |
+| Nome |
+|------|
+| Cinthia Emanuelly |
+| Daniel Dias |
+| Ires Vitória |
+| Jady Wéllyda |
+| João Vitor Lemos |
 
 ## Domínio
 
@@ -65,6 +67,35 @@ Exemplo de corpo para POST/PUT:
 
 Respostas de erro seguem o formato estruturado do framework (mensagem, detalhes e `requestId`).
 
+### Cadastro de pessoas
+
+Além dos eventos, a API permite cadastrar as pessoas que participam de cada evento. Cada pessoa tem `id` (gerado automaticamente), `nome`, `email` e `eventoId` (o evento ao qual ela está vinculada).
+
+| Método | Rota | Descrição | Sucesso | Erros |
+|--------|------|-----------|---------|-------|
+| POST | `/pessoas` | Cadastra uma pessoa | **201** + cabeçalho `Location: /pessoas/{id}` | 400, 422 |
+| GET | `/pessoas` | Lista todas as pessoas | **200** | — |
+| GET | `/pessoas?nome=abc` | Filtra por parte do nome, sem diferenciar maiúsculas/minúsculas | **200** | — |
+| GET | `/pessoas/{id}` | Consulta por ID | **200** | 400 (ID não numérico), 404 |
+| PUT | `/pessoas/{id}` | Atualiza (o ID é preservado) | **200** | 400, 404, 422 |
+| DELETE | `/pessoas/{id}` | Exclui | **204** (sem corpo) | 404 |
+
+Exemplo de corpo para POST/PUT:
+
+```json
+{ "nome": "Ana Souza", "email": "ana@email.com", "eventoId": 1 }
+```
+
+Regras:
+
+- `nome` e `email` são obrigatórios e não aceitam vazio nem só espaços: **400**.
+- `email` precisa ter um formato válido (ex.: `nome@dominio.com`): **400**.
+- `eventoId` deve ser maior que zero: **400**.
+- `eventoId` de um evento que não existe: **422**.
+- Uma requisição rejeitada não altera os dados armazenados.
+
+Os exemplos de chamadas estão em [`requests-pessoas.http`](requests-pessoas.http).
+
 ## Arquitetura
 
 ```
@@ -108,6 +139,7 @@ Tudo é injetado **pelo construtor**: o `EventoController` recebe o `EventoServi
 
 - `ApiIntegrationTest`: CRUD completo contra um Jetty real, filtros, limites (1 e 5000), 400/404/422 e verificação de que requisições rejeitadas não alteram os dados.
 - `EventoServiceTest`: regra de negócio e filtro isolados, com repositório falso injetado pelo construtor.
+- `PessoaServiceTest`: cadastro de pessoas isolado (validação de e-mail, evento inexistente, filtro por nome e preservação do ID).
 - `RouterTest`, `ApplicationContextTest`, `UnexpectedErrorIntegrationTest`: testes do framework.
 
 ## Uso de IA

@@ -46,7 +46,6 @@ public final class PessoaService {
         if (!repository.delete(id)) throw notFound();
     }
 
-    // Validações acontecem antes de gravar: uma requisição rejeitada nunca altera os dados.
     private void validate(PessoaInput input) {
         if (!EMAIL.matcher(input.email().trim()).matches()) throw new HttpException(400, "E-mail inválido");
         if (eventoRepository.findById(input.eventoId()).isEmpty())

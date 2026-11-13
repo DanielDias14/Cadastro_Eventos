@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.minispring.ApiIntegrationTest" time="3.72" tests="6" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos\target\test-classes;C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos\target\classes;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.7\spring-boot-starter-web-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.7\spring-boot-starter-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot\3.5.7\spring-boot-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.7\spring-boot-autoconfigure-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.7\spring-boot-starter-logging-3.5.7.jar;C:\Users\Usuario\.m2\repository\ch\qos\logback\logback-classic\1.5.20\logback-classic-1.5.20.jar;C:\Users\Usuario\.m2\repository\ch\qos\logback\logback-core\1.5.20\logback-core-1.5.20.jar;C:\Users\Usuario\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\Usuario\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Usuario\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\Usuario\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Usuario\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.7\spring-boot-starter-json-3.5.7.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.2\jackson-databind-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.2\jackson-annotations-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.2\jackson-core-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.2\jackson-datatype-jdk8-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.2\jackson-datatype-jsr310-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.2\jackson-module-parameter-names-2.19.2.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.7\spring-boot-starter-tomcat-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.48\tomcat-embed-core-10.1.48.jar;C:\Users\Usuario\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.48\tomcat-embed-websocket-10.1.48.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-web\6.2.12\spring-web-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-beans\6.2.12\spring-beans-6.2.12.jar;C:\Users\Usuario\.m2\repository\io\micrometer\micrometer-observation\1.15.5\micrometer-observation-1.15.5.jar;C:\Users\Usuario\.m2\repository\io\micrometer\micrometer-commons\1.15.5\micrometer-commons-1.15.5.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-webmvc\6.2.12\spring-webmvc-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-aop\6.2.12\spring-aop-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-context\6.2.12\spring-context-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-expression\6.2.12\spring-expression-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.7\spring-boot-starter-validation-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.48\tomcat-embed-el-10.1.48.jar;C:\Users\Usuario\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.3.Final\hibernate-validator-8.0.3.Final.jar;C:\Users\Usuario\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Usuario\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\classmate\1.7.1\classmate-1.7.1.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.7\spring-boot-starter-test-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-test\3.5.7\spring-boot-test-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.7\spring-boot-test-autoconfigure-3.5.7.jar;C:\Users\Usuario\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\Usuario\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\Usuario\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.4\jakarta.xml.bind-api-4.0.4.jar;C:\Users\Usuario\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\Usuario\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\Usuario\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\Usuario\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\Usuario\.m2\repository\org\assertj\assertj-core\3.27.6\assertj-core-3.27.6.jar;C:\Users\Usuario\.m2\repository\net\bytebuddy\byte-buddy\1.17.8\byte-buddy-1.17.8.jar;C:\Users\Usuario\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\Usuario\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\Usuario\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;C:\Users\Usuario\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\Usuario\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar;C:\Users\Usuario\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Usuario\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\Usuario\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\Usuario\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-core\6.2.12\spring-core-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-jcl\6.2.12\spring-jcl-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-test\6.2.12\spring-test-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\xmlunit\xmlunit-core\2.10.4\xmlunit-core-2.10.4.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.12\bin"/>
+    <property name="sun.java.command" value="C:\Users\Usuario\AppData\Local\Temp\surefire9477433488873422024\surefirebooter-20261113190858411_3.jar C:\Users\Usuario\AppData\Local\Temp\surefire9477433488873422024 2026-11-13T19-08-58_290-jvmRun1 surefire-20261113190858411_1tmp surefire_0-20261113190858411_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos\target\test-classes;C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos\target\classes;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.7\spring-boot-starter-web-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.7\spring-boot-starter-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot\3.5.7\spring-boot-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.7\spring-boot-autoconfigure-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.7\spring-boot-starter-logging-3.5.7.jar;C:\Users\Usuario\.m2\repository\ch\qos\logback\logback-classic\1.5.20\logback-classic-1.5.20.jar;C:\Users\Usuario\.m2\repository\ch\qos\logback\logback-core\1.5.20\logback-core-1.5.20.jar;C:\Users\Usuario\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\Usuario\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Usuario\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\Usuario\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Usuario\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.7\spring-boot-starter-json-3.5.7.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.2\jackson-databind-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.2\jackson-annotations-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.2\jackson-core-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.2\jackson-datatype-jdk8-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.2\jackson-datatype-jsr310-2.19.2.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.2\jackson-module-parameter-names-2.19.2.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.7\spring-boot-starter-tomcat-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.48\tomcat-embed-core-10.1.48.jar;C:\Users\Usuario\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.48\tomcat-embed-websocket-10.1.48.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-web\6.2.12\spring-web-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-beans\6.2.12\spring-beans-6.2.12.jar;C:\Users\Usuario\.m2\repository\io\micrometer\micrometer-observation\1.15.5\micrometer-observation-1.15.5.jar;C:\Users\Usuario\.m2\repository\io\micrometer\micrometer-commons\1.15.5\micrometer-commons-1.15.5.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-webmvc\6.2.12\spring-webmvc-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-aop\6.2.12\spring-aop-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-context\6.2.12\spring-context-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-expression\6.2.12\spring-expression-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.7\spring-boot-starter-validation-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.48\tomcat-embed-el-10.1.48.jar;C:\Users\Usuario\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.3.Final\hibernate-validator-8.0.3.Final.jar;C:\Users\Usuario\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Usuario\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\Usuario\.m2\repository\com\fasterxml\classmate\1.7.1\classmate-1.7.1.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.7\spring-boot-starter-test-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-test\3.5.7\spring-boot-test-3.5.7.jar;C:\Users\Usuario\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.7\spring-boot-test-autoconfigure-3.5.7.jar;C:\Users\Usuario\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\Usuario\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\Usuario\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.4\jakarta.xml.bind-api-4.0.4.jar;C:\Users\Usuario\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\Usuario\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\Usuario\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\Usuario\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\Usuario\.m2\repository\org\assertj\assertj-core\3.27.6\assertj-core-3.27.6.jar;C:\Users\Usuario\.m2\repository\net\bytebuddy\byte-buddy\1.17.8\byte-buddy-1.17.8.jar;C:\Users\Usuario\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\Usuario\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\Usuario\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;C:\Users\Usuario\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\Usuario\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar;C:\Users\Usuario\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Usuario\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\Usuario\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\Usuario\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-core\6.2.12\spring-core-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-jcl\6.2.12\spring-jcl-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\springframework\spring-test\6.2.12\spring-test-6.2.12.jar;C:\Users\Usuario\.m2\repository\org\xmlunit\xmlunit-core\2.10.4\xmlunit-core-2.10.4.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Usuario"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-07-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21.0.12"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\Usuario\AppData\Local\Temp\surefire9477433488873422024\surefirebooter-20261113190858411_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.12+7-LTS-205"/>
+    <property name="user.name" value="Usuario"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Usuario\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Usuario\AppData\Local\Temp\"/>
+    <property name="catalina.home" value="C:\Users\Usuario\AppData\Local\Temp\tomcat.0.5067346483330733837"/>
+    <property name="java.version" value="21.0.12"/>
+    <property name="user.dir" value="C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="5252"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="C:\Users\Usuario\AppData\Local\Temp\tomcat.0.5067346483330733837"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Tailscale\;C:\Users\Usuario\.proto\shims;C:\Users\Usuario\.proto\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Usuario\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\Usuario\AppData\Local\Programs\Python\Python313\;C:\Users\Usuario\AppData\Local\Programs\Python\Launcher\;C:\Users\Usuario\AppData\Local\Microsoft\WindowsApps;C:\Users\Usuario\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Usuario\AppData\Local\GitHubDesktop\bin;C:\Users\Usuario\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\Usuario\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\Usuario\AppData\Local\spicetify;C:\Program Files\apache-maven-3.10.0\bin;;C:\Users\Usuario\AppData\Local\Programs\Ollama;C:\Users\Usuario\AppData\Roaming\npm;c:\Users\Usuario\.antigravity-ide\extensions\vscjava.vscode-java-debug-0.60.0-universal\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.12+7-LTS-205"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="concurrentRequestsProduceUniqueIds" classname="br.com.minispring.ApiIntegrationTest" time="1.118">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2026-11-13T19:08:59.653-03:00  INFO 5252 --- [           main] br.com.minispring.ApiIntegrationTest     : Starting ApiIntegrationTest using Java 21.0.12 with PID 5252 (started by Usuario in C:\Users\Usuario\Downloads\Cadastro_Eventos-main\Cadastro_Eventos)
+2026-11-13T19:08:59.655-03:00  INFO 5252 --- [           main] br.com.minispring.ApiIntegrationTest     : No active profile set, falling back to 1 default profile: "default"
+2026-11-13T19:09:00.513-03:00  INFO 5252 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-13T19:09:00.528-03:00  INFO 5252 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-13T19:09:00.528-03:00  INFO 5252 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-11-13T19:09:00.582-03:00  INFO 5252 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-13T19:09:00.584-03:00  INFO 5252 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 908 ms
+2026-11-13T19:09:01.125-03:00  INFO 5252 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 53814 (http) with context path '/'
+2026-11-13T19:09:01.131-03:00  INFO 5252 --- [           main] br.com.minispring.ApiIntegrationTest     : Started ApiIntegrationTest in 1.764 seconds (process running for 2.633)
+2026-11-13T19:09:01.865-03:00  INFO 5252 --- [-auto-1-exec-18] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-13T19:09:01.865-03:00  INFO 5252 --- [-auto-1-exec-18] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-13T19:09:01.866-03:00  INFO 5252 --- [-auto-1-exec-18] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-4] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=cd8f74da-636e-40b0-8b59-522b7525f990
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-29] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=87c14f46-3ba8-4334-b8bc-cbf9a9929118
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-25] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=feb56a45-c606-4dff-b76c-ac10dabea026
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-24] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=fbbd1299-8428-4f50-b291-6a52962cf699
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-3] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=33f27294-3959-4cef-88f6-2d7d09ce2ca6
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-10] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=ea93e181-c3fc-42c6-88a8-0982a7924994
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-6] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=3119f934-381c-4891-b58a-8ba91619c74d
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-12] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=15e2607d-9593-4869-9bf3-d9af4cbbe853
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-1] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=2b132d16-3bb6-46f0-9429-5d5e857af285
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-19] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=6c319b90-6402-4a89-b4a6-339958fd01f7
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-7] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=95790fe6-bba9-496d-8b4b-6d8844e18231
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-13] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=515562e4-c9c7-48d0-963b-c9cd053eb561
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-18] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=bb010c9e-f728-4bba-93ec-0b35a2bf1ed2
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-28] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=ac5aaed0-b85c-44de-b8f8-e789e3d9d834
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-2] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=b288e0d0-fca2-4c60-93c4-eb84bb50ff0f
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-15] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=7fdf0c52-00ec-4324-b211-cd5b46e41009
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-11] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=c8605b4f-5fee-4ef6-8ee7-f17867896234
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-8] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (286 ms) requestId=7c331dd6-40a2-4101-8246-ac316978a9e6
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-14] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=96e341cb-1d8f-423e-b288-db4b34d8c708
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-22] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=73c8e9ec-179e-49a8-9fd0-bafce193a2d0
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-16] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (286 ms) requestId=05c2867a-1555-4cda-96ab-0bbc5abf14ce
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-21] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (286 ms) requestId=fb3b8a24-9d37-4a70-a814-b80988df351e
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-9] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=28a414ba-8035-4497-969c-c64162036f0e
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-23] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=197dac47-63d8-4491-85c7-f9c093cebff1
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-20] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=87ad7148-eb8b-4af9-bb93-c15fba6023b7
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-30] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=36cb4bb4-d6f8-4729-b38b-515cefce2fc9
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [o-auto-1-exec-5] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=97796a6d-24e2-47b4-bccb-816d7c00f138
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-26] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=9151e25e-e1f1-4b11-86d8-48126042ffe0
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-27] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=1bca4f0d-9a15-4388-a2dd-9d5061eb5f61
+2026-11-13T19:09:02.157-03:00  INFO 5252 --- [-auto-1-exec-17] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (287 ms) requestId=f3fcf096-c9d5-42b0-a9c1-d97c5863d1e0
+2026-11-13T19:09:02.234-03:00  INFO 5252 --- [-auto-1-exec-12] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (12 ms) requestId=fae1067d-3efe-4ef5-8a62-a37ff267823e
+]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Usuario\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidInputsWithStructuredErrors" classname="br.com.minispring.ApiIntegrationTest" time="0.105">
+    <system-out><![CDATA[2026-11-13T19:09:02.295-03:00  INFO 5252 --- [o-auto-1-exec-1] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (30 ms) requestId=51236ce3-e218-4f48-bfb7-b8224e29e243
+2026-11-13T19:09:02.303-03:00  INFO 5252 --- [o-auto-1-exec-7] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (2 ms) requestId=069bfb00-7ee7-4777-ba6f-8c541e70bc8a
+2026-11-13T19:09:02.307-03:00  INFO 5252 --- [o-auto-1-exec-3] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=482574b9-3273-4e4e-8c84-2d75a8e4585b
+2026-11-13T19:09:02.312-03:00  INFO 5252 --- [-auto-1-exec-10] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=983cdb5c-cb28-438e-9430-81ab19963577
+2026-11-13T19:09:02.317-03:00  INFO 5252 --- [-auto-1-exec-13] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (3 ms) requestId=5dae2fd6-f235-458a-94ec-cc5851b3eb17
+2026-11-13T19:09:02.323-03:00  INFO 5252 --- [-auto-1-exec-24] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (2 ms) requestId=b443601a-d0b5-49f8-a7e9-a26d5c1317c8
+2026-11-13T19:09:02.326-03:00  INFO 5252 --- [o-auto-1-exec-4] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=2f77fdca-92a4-4c3e-937d-2a5fd19fdee3
+2026-11-13T19:09:02.331-03:00  INFO 5252 --- [o-auto-1-exec-6] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=fe658f2e-321f-4f28-838a-cc26a83f3a0c
+2026-11-13T19:09:02.335-03:00  INFO 5252 --- [-auto-1-exec-18] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (2 ms) requestId=07aaf79d-17e3-4538-86f7-2a7bf58c450b
+2026-11-13T19:09:02.340-03:00  INFO 5252 --- [-auto-1-exec-29] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos/abc -> 400 (3 ms) requestId=252a21a9-224f-4a0f-ab5c-6c29542fa404
+2026-11-13T19:09:02.345-03:00  INFO 5252 --- [-auto-1-exec-25] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 422 (2 ms) requestId=a8dfec23-a373-434b-ae3e-493964b31634
+2026-11-13T19:09:02.349-03:00  INFO 5252 --- [-auto-1-exec-19] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 415 (2 ms) requestId=95d989a7-96c7-4423-bb89-70f11a045ac4
+2026-11-13T19:09:02.354-03:00  INFO 5252 --- [-auto-1-exec-15] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 413 (1 ms) requestId=6d75a9a4-8aa2-4362-bf38-49fcc9679f8c
+]]></system-out>
+  </testcase>
+  <testcase name="fullCrudThroughRealServer" classname="br.com.minispring.ApiIntegrationTest" time="0.055">
+    <system-out><![CDATA[2026-11-13T19:09:02.373-03:00  INFO 5252 --- [o-auto-1-exec-2] b.c.m.exemplo.web.RequestIdFilter        : GET / -> 200 (2 ms) requestId=9f94d8c8-2d69-4bb9-a0cb-f8e769522a05
+2026-11-13T19:09:02.377-03:00  INFO 5252 --- [-auto-1-exec-11] b.c.m.exemplo.web.RequestIdFilter        : GET /health -> 200 (2 ms) requestId=6fe566ac-d0af-4273-82be-7e6cc7247723
+2026-11-13T19:09:02.382-03:00  INFO 5252 --- [-auto-1-exec-28] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (2 ms) requestId=5f65e839-957f-4629-8d9d-8c8db4d559ff
+2026-11-13T19:09:02.386-03:00  INFO 5252 --- [o-auto-1-exec-8] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos/31 -> 200 (2 ms) requestId=1410f51a-df98-4272-b8ff-18c6f2e2d1fa
+2026-11-13T19:09:02.394-03:00  INFO 5252 --- [-auto-1-exec-14] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=529ca8f7-42ea-4a37-afbd-f08090583da9
+2026-11-13T19:09:02.397-03:00  INFO 5252 --- [-auto-1-exec-21] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=b4b5bd2b-7aad-4395-a098-9d7144892ebb
+2026-11-13T19:09:02.403-03:00  INFO 5252 --- [-auto-1-exec-16] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/31 -> 200 (4 ms) requestId=8bcd58d2-7630-4a77-9149-8c2a67abfcb8
+2026-11-13T19:09:02.407-03:00  INFO 5252 --- [o-auto-1-exec-9] b.c.m.exemplo.web.RequestIdFilter        : DELETE /eventos/31 -> 204 (2 ms) requestId=66c376e0-98dd-420a-8784-bbca7f4f80c8
+2026-11-13T19:09:02.411-03:00  INFO 5252 --- [-auto-1-exec-22] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos/31 -> 404 (1 ms) requestId=d2d5411d-541b-4e24-99de-2f1cf4389429
+2026-11-13T19:09:02.413-03:00  INFO 5252 --- [-auto-1-exec-30] b.c.m.exemplo.web.RequestIdFilter        : DELETE /eventos/31 -> 404 (1 ms) requestId=6dd1555a-fd73-4488-960d-9de0a3e40e37
+2026-11-13T19:09:02.416-03:00  INFO 5252 --- [o-auto-1-exec-5] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/31 -> 404 (1 ms) requestId=fd168c5e-ffc8-4ef8-bc32-bedcc98f834d
+]]></system-out>
+  </testcase>
+  <testcase name="distinguishesRouteErrorsAndSendsAllowHeader" classname="br.com.minispring.ApiIntegrationTest" time="0.022">
+    <system-out><![CDATA[2026-11-13T19:09:02.434-03:00  INFO 5252 --- [-auto-1-exec-20] b.c.m.exemplo.web.RequestIdFilter        : GET /inexistente -> 404 (8 ms) requestId=b2716c2e-9f55-4e06-ad3a-eb4c4e53048c
+2026-11-13T19:09:02.437-03:00  INFO 5252 --- [-auto-1-exec-26] b.c.m.exemplo.web.RequestIdFilter        : PATCH /eventos/1 -> 405 (2 ms) requestId=333b8574-66f6-4f6b-aee9-242e73773a08
+]]></system-out>
+  </testcase>
+  <testcase name="rejectedCreatesAndUpdatesPreserveStoredData" classname="br.com.minispring.ApiIntegrationTest" time="0.216">
+    <system-out><![CDATA[2026-11-13T19:09:02.449-03:00  INFO 5252 --- [-auto-1-exec-17] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (1 ms) requestId=c8d1e920-73a6-4256-85b0-91e71fb72caa
+2026-11-13T19:09:02.451-03:00  INFO 5252 --- [-auto-1-exec-12] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=159268ee-a500-4e46-be53-1bdd36394e93
+2026-11-13T19:09:02.454-03:00  INFO 5252 --- [o-auto-1-exec-1] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=09a8dacd-c6c2-423f-9a24-5952e3e7949a
+2026-11-13T19:09:02.459-03:00  INFO 5252 --- [o-auto-1-exec-7] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=5aa48263-65b1-4793-80eb-1002732d358a
+2026-11-13T19:09:02.464-03:00  INFO 5252 --- [o-auto-1-exec-3] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (2 ms) requestId=f0e100b7-82dd-47cc-a680-5f2a0ea12f0f
+2026-11-13T19:09:02.468-03:00  INFO 5252 --- [-auto-1-exec-10] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=f469c0fc-da0d-46a2-a8b7-97869bd0b6b9
+2026-11-13T19:09:02.471-03:00  INFO 5252 --- [-auto-1-exec-13] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=8b3a870f-a636-4607-b504-98092546c905
+2026-11-13T19:09:02.475-03:00  INFO 5252 --- [-auto-1-exec-24] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=19f55e62-f288-4c86-9459-7f8353ee5979
+2026-11-13T19:09:02.480-03:00  INFO 5252 --- [o-auto-1-exec-4] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (2 ms) requestId=54d2ae98-60be-47a4-ab9d-677ce561bb39
+2026-11-13T19:09:02.483-03:00  INFO 5252 --- [o-auto-1-exec-6] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=3b8e7001-f93e-4840-80e2-2ff21fa06354
+2026-11-13T19:09:02.487-03:00  INFO 5252 --- [-auto-1-exec-18] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (2 ms) requestId=cd909f1d-c3ef-4434-809b-1aa8081843ad
+2026-11-13T19:09:02.492-03:00  INFO 5252 --- [-auto-1-exec-29] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=fbdec51f-53f4-4c38-90b0-1dfb0cee2f21
+2026-11-13T19:09:02.496-03:00  INFO 5252 --- [-auto-1-exec-25] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (2 ms) requestId=a0f2c4b5-c4f6-44b6-97d6-87ab321f884b
+2026-11-13T19:09:02.499-03:00  INFO 5252 --- [-auto-1-exec-19] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=e0dbe172-30c4-4d1c-bee5-93863d12ffa9
+2026-11-13T19:09:02.503-03:00  INFO 5252 --- [-auto-1-exec-15] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (2 ms) requestId=1780b54f-85a0-46a8-ab92-20c817e504ef
+2026-11-13T19:09:02.506-03:00  INFO 5252 --- [o-auto-1-exec-2] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=22f99ba1-6175-4b9c-ad71-e3f55c6de4f4
+2026-11-13T19:09:02.510-03:00  INFO 5252 --- [-auto-1-exec-11] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=38f23034-5cb8-40ce-8f1d-8404dc5da6db
+2026-11-13T19:09:02.514-03:00  INFO 5252 --- [-auto-1-exec-28] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=ed622f64-0b58-44b5-ad3c-52d5ea6ee2b1
+2026-11-13T19:09:02.518-03:00  INFO 5252 --- [o-auto-1-exec-8] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (2 ms) requestId=87ffacf9-4bb6-4647-8b25-1d92fffdc81d
+2026-11-13T19:09:02.522-03:00  INFO 5252 --- [-auto-1-exec-14] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=018ec402-6435-4bbf-ad08-b1107d9c3e0a
+2026-11-13T19:09:02.525-03:00  INFO 5252 --- [-auto-1-exec-21] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=c04d3070-ca7b-4c05-9110-4a67d5323152
+2026-11-13T19:09:02.528-03:00  INFO 5252 --- [-auto-1-exec-16] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=33957f16-bc07-4555-adb0-0af86a5b1ed8
+2026-11-13T19:09:02.531-03:00  INFO 5252 --- [o-auto-1-exec-9] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=4c33fb98-ee30-4900-a76a-b62955b34304
+2026-11-13T19:09:02.534-03:00  INFO 5252 --- [-auto-1-exec-22] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=c564fb59-da4f-4955-bcd0-132c85f9ef85
+2026-11-13T19:09:02.536-03:00  INFO 5252 --- [-auto-1-exec-30] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=db612676-a523-44c3-a9b7-a56bee96eb67
+2026-11-13T19:09:02.540-03:00  INFO 5252 --- [o-auto-1-exec-5] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=9679511f-da47-4f7b-b34c-6dc99ff21037
+2026-11-13T19:09:02.543-03:00  INFO 5252 --- [-auto-1-exec-23] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=f305bdd3-3828-44ed-8360-0aeee6ca88a6
+2026-11-13T19:09:02.546-03:00  INFO 5252 --- [-auto-1-exec-20] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=901f71d6-5607-460d-84d2-18e75230f4ba
+2026-11-13T19:09:02.549-03:00  INFO 5252 --- [-auto-1-exec-26] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=06cb4a02-28a1-4f03-9024-dd6c197826d4
+2026-11-13T19:09:02.554-03:00  INFO 5252 --- [-auto-1-exec-27] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=a9671cfc-ccdf-43b4-981b-891cb27cdf03
+2026-11-13T19:09:02.556-03:00  INFO 5252 --- [-auto-1-exec-17] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=1d4e5749-aa1a-42ad-8609-33183d2f41c8
+2026-11-13T19:09:02.559-03:00  INFO 5252 --- [-auto-1-exec-12] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=4b5880b9-c51e-4d48-abf9-81bc0acdcfe7
+2026-11-13T19:09:02.562-03:00  INFO 5252 --- [o-auto-1-exec-1] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=a6db987e-2d0f-4e9b-9024-cbf8010857d2
+2026-11-13T19:09:02.564-03:00  INFO 5252 --- [o-auto-1-exec-7] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (0 ms) requestId=fe00fd85-47ee-49f4-965e-816c18efbada
+2026-11-13T19:09:02.566-03:00  INFO 5252 --- [o-auto-1-exec-3] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=7bcd0344-10f1-4787-8259-85bc3b0a38f0
+2026-11-13T19:09:02.569-03:00  INFO 5252 --- [-auto-1-exec-10] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=98342da5-2deb-49aa-933a-580dcbd3d99e
+2026-11-13T19:09:02.572-03:00  INFO 5252 --- [-auto-1-exec-13] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=2fb8ac07-0934-48c6-9095-08d4523a7491
+2026-11-13T19:09:02.575-03:00  INFO 5252 --- [-auto-1-exec-24] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=845eb913-341b-48e0-a30f-45b2029999fe
+2026-11-13T19:09:02.578-03:00  INFO 5252 --- [o-auto-1-exec-4] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=3d25ade6-b529-4c67-8895-196836c6b8eb
+2026-11-13T19:09:02.581-03:00  INFO 5252 --- [o-auto-1-exec-6] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=101da863-55d4-4619-a12f-ac9502b4cb78
+2026-11-13T19:09:02.584-03:00  INFO 5252 --- [-auto-1-exec-18] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=1d34cb17-5470-4fb4-810b-50ccb4a29d05
+2026-11-13T19:09:02.588-03:00  INFO 5252 --- [-auto-1-exec-29] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=7a589b25-064e-49d2-a069-b99b60d82363
+2026-11-13T19:09:02.591-03:00  INFO 5252 --- [-auto-1-exec-25] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=a839edd2-bbc8-465c-a2a7-13125b1b6009
+2026-11-13T19:09:02.594-03:00  INFO 5252 --- [-auto-1-exec-19] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=77efc0e4-d0d0-4eed-97d5-4994534cee11
+2026-11-13T19:09:02.597-03:00  INFO 5252 --- [-auto-1-exec-15] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=eed17838-0c5b-46d9-96c5-ef8e6e6d1cc7
+2026-11-13T19:09:02.599-03:00  INFO 5252 --- [o-auto-1-exec-2] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=1b8fe1f5-a122-49c5-8657-4038d5e351e6
+2026-11-13T19:09:02.603-03:00  INFO 5252 --- [-auto-1-exec-11] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 422 (1 ms) requestId=3f1525b3-1a6c-462a-9dbb-d7c17967a969
+2026-11-13T19:09:02.605-03:00  INFO 5252 --- [-auto-1-exec-28] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=47ae1062-6b9c-4a65-b2e6-c20b64b75aa4
+2026-11-13T19:09:02.608-03:00  INFO 5252 --- [o-auto-1-exec-8] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 422 (1 ms) requestId=d2c26525-eec8-4977-a2e6-617101fefaa1
+2026-11-13T19:09:02.609-03:00  INFO 5252 --- [-auto-1-exec-14] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (0 ms) requestId=d6ed5bfc-d930-40ec-9b39-916e0b1f0bc7
+2026-11-13T19:09:02.614-03:00  INFO 5252 --- [-auto-1-exec-21] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=22aabd29-b1f1-4265-8eda-795abdee67ca
+2026-11-13T19:09:02.618-03:00  INFO 5252 --- [-auto-1-exec-16] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=6b400615-3299-4836-8109-0b0cf211058d
+2026-11-13T19:09:02.621-03:00  INFO 5252 --- [o-auto-1-exec-9] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=5513da33-b0b1-4ce4-8ed4-3c7de3fe9bdf
+2026-11-13T19:09:02.624-03:00  INFO 5252 --- [-auto-1-exec-22] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=21b753d6-bf22-49b7-9b9c-ab82ab01486f
+2026-11-13T19:09:02.626-03:00  INFO 5252 --- [-auto-1-exec-30] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (0 ms) requestId=87fac0d6-92fd-4e25-a02b-1f53ed8c6e1a
+2026-11-13T19:09:02.629-03:00  INFO 5252 --- [o-auto-1-exec-5] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=4092afa1-8154-4157-8ec2-1a3d11e848f8
+2026-11-13T19:09:02.632-03:00  INFO 5252 --- [-auto-1-exec-23] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=bf90d2f7-c347-4943-8762-ed71a7e5cb3e
+2026-11-13T19:09:02.636-03:00  INFO 5252 --- [-auto-1-exec-20] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=f97bcda0-1beb-4e40-a160-ef04120c1c7b
+2026-11-13T19:09:02.638-03:00  INFO 5252 --- [-auto-1-exec-26] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 400 (1 ms) requestId=a88b0a0a-6de5-47d5-ba87-5d421f10b0e8
+2026-11-13T19:09:02.641-03:00  INFO 5252 --- [-auto-1-exec-27] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=83eff230-8e37-41fd-9dae-3c1348d664a9
+2026-11-13T19:09:02.644-03:00  INFO 5252 --- [-auto-1-exec-17] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/32 -> 400 (1 ms) requestId=3f278a16-a730-4175-876e-5cbf141000c4
+2026-11-13T19:09:02.649-03:00  INFO 5252 --- [-auto-1-exec-12] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (1 ms) requestId=816b5ada-e065-4d2a-b326-d357baafbe55
+2026-11-13T19:09:02.653-03:00  INFO 5252 --- [o-auto-1-exec-1] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/9999 -> 404 (1 ms) requestId=6abf20d7-b4c0-4275-988e-f8ea3b7371c4
+2026-11-13T19:09:02.655-03:00  INFO 5252 --- [o-auto-1-exec-7] b.c.m.exemplo.web.RequestIdFilter        : DELETE /eventos/9999 -> 404 (0 ms) requestId=a26b1f08-4297-4fde-9315-f8203e8bf3ef
+2026-11-13T19:09:02.656-03:00  INFO 5252 --- [o-auto-1-exec-3] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos -> 200 (0 ms) requestId=8634e1d0-226c-484b-b98f-937f9a9f9617
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsInclusiveParticipantLimitsOnCreateAndUpdate" classname="br.com.minispring.ApiIntegrationTest" time="0.026">
+    <system-out><![CDATA[2026-11-13T19:09:02.667-03:00  INFO 5252 --- [-auto-1-exec-13] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (1 ms) requestId=c76214fa-fad6-43e8-a35b-573daf1241e3
+2026-11-13T19:09:02.671-03:00  INFO 5252 --- [-auto-1-exec-24] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/33 -> 200 (1 ms) requestId=8f43d0f3-bbe9-4099-bc2c-51ddc8b410b4
+2026-11-13T19:09:02.674-03:00  INFO 5252 --- [o-auto-1-exec-4] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos/33 -> 200 (1 ms) requestId=ab07d518-73c3-43f0-8d58-9d3604d8d860
+2026-11-13T19:09:02.677-03:00  INFO 5252 --- [o-auto-1-exec-6] b.c.m.exemplo.web.RequestIdFilter        : PUT /eventos/33 -> 200 (1 ms) requestId=6c003005-1557-4bff-924e-a629f9ce7a5d
+2026-11-13T19:09:02.679-03:00  INFO 5252 --- [-auto-1-exec-18] b.c.m.exemplo.web.RequestIdFilter        : GET /eventos/33 -> 200 (1 ms) requestId=02cdc244-b578-4722-9feb-af7421222bc8
+2026-11-13T19:09:02.683-03:00  INFO 5252 --- [-auto-1-exec-29] b.c.m.exemplo.web.RequestIdFilter        : POST /eventos -> 201 (1 ms) requestId=382cb8da-9879-4adb-9076-bddc4b729ffc
+]]></system-out>
+  </testcase>
+</testsuite>

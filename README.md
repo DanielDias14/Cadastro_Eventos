@@ -1,6 +1,6 @@
 # Cadastro de Eventos — Centro Cultural
 
-API REST em Java para cadastrar os eventos de um centro cultural, construída sobre o framework didático **mini-spring** (pacote `br.com.minispring.framework`), com arquitetura em camadas, injeção de dependências por construtor e dados em memória.
+API REST em Java para cadastrar os eventos de um centro cultural, construída com **Spring Boot 3** (Java 21), com arquitetura em camadas, injeção de dependências por construtor e dados em memória.
 
 ## Integrantes
 
@@ -39,7 +39,10 @@ Requisitos: **Java 21** e **Maven 3.9+**.
 # executar os testes
 mvn test
 
-# gerar o jar executável e subir a API em http://127.0.0.1:8080
+# subir a API em http://127.0.0.1:8080
+mvn spring-boot:run
+
+# ou gerar o jar executável
 mvn package
 java -jar target/cadastro-eventos-1.0.0.jar
 ```
@@ -65,7 +68,7 @@ Exemplo de corpo para POST/PUT:
 { "titulo": "Festival de Música", "participantes": 3000 }
 ```
 
-Respostas de erro seguem o formato estruturado do framework (mensagem, detalhes e `requestId`).
+Respostas de erro seguem um formato estruturado (`timestamp`, `status`, `message`, `path`, `details` e `requestId`), produzido pelo `GlobalExceptionHandler` (`@RestControllerAdvice`).
 
 ### Cadastro de pessoas
 
@@ -102,7 +105,7 @@ Os exemplos de chamadas estão em [`requests-pessoas.http`](requests-pessoas.htt
 Requisição HTTP
    │
    ▼
-DispatcherServlet (framework) ── Router encontra a rota e converte parâmetros/JSON
+DispatcherServlet (Spring MVC) ── RequestIdFilter gera o X-Request-Id; Jackson converte o JSON; @Valid valida
    │
    ▼
 EventoController   → só trata HTTP: lê entrada, chama o Service, devolve status/Location
@@ -116,31 +119,32 @@ EventoRepository (interface) ◄── InMemoryEventoRepository (ConcurrentHashM
 
 | Camada | Classe | Responsabilidade |
 |--------|--------|------------------|
-| Controller | `EventoController` | Mapeia rotas e códigos HTTP; não contém regra de negócio |
+| Controller | `EventoController` | Mapeia rotas (`@GetMapping`, `@PostMapping`...) e códigos HTTP; sem regra de negócio |
 | Service | `EventoService` | Aplica a regra de negócio e lança `HttpException` (404/422) |
 | Repository | `EventoRepository` / `InMemoryEventoRepository` | Guarda os dados em memória e gera o ID |
 | DTO de entrada | `EventoInput` | Recebe o JSON e declara `@NotBlank` / `@Positive`; o cliente não escolhe o ID |
 | Modelo | `Evento` | Registro imutável devolvido pela API |
+| Web | `GlobalExceptionHandler`, `RequestIdFilter` | Formato de erro padronizado, `X-Request-Id` e limite de 1 MiB no corpo |
 
 ### Injeção de dependências
 
-Tudo é injetado **pelo construtor**: o `EventoController` recebe o `EventoService`, e o `EventoService` recebe a **interface** `EventoRepository`. Na inicialização, o `ComponentScanner` procura classes anotadas com `@RestController`, `@Service` e `@Repository`, e o `ApplicationContext` as instancia na ordem das dependências, escolhendo a implementação da interface. Por isso o Service pode ser testado com um repositório falso, sem subir servidor.
+Tudo é injetado **pelo construtor** pelo container do Spring: o `EventoController` recebe o `EventoService`, e o `EventoService` recebe a **interface** `EventoRepository`. O `@SpringBootApplication` faz a varredura de classes anotadas com `@RestController`, `@Service` e `@Repository`. Por isso o Service pode ser testado com um repositório falso, sem subir servidor.
 
 ### Caminho de uma requisição (`POST /eventos`)
 
-1. O Jetty recebe a requisição e entrega ao `DispatcherServlet`.
-2. O `Router` casa método + caminho com `EventoController.create`.
-3. O corpo JSON é convertido para `EventoInput` e validado (`@NotBlank`, `@Positive`) → 400 se inválido.
+1. O Tomcat embutido recebe a requisição e entrega ao `DispatcherServlet`.
+2. O Spring MVC casa método + caminho com `EventoController.create`.
+3. O corpo JSON é convertido para `EventoInput` e validado (`@Valid`) → 400 se inválido.
 4. O Controller chama `EventoService.create`, que aplica a regra dos 5000 → 422 se violada.
 5. O Service chama o `EventoRepository`, que gera o ID e guarda o evento.
-6. O Controller devolve `HttpResult.created("/eventos/{id}", evento)` → **201** com `Location`.
+6. O Controller devolve `ResponseEntity.created(...)` → **201** com `Location`.
 
 ## Testes
 
-- `ApiIntegrationTest`: CRUD completo contra um Jetty real, filtros, limites (1 e 5000), 400/404/422 e verificação de que requisições rejeitadas não alteram os dados.
+- `ApiIntegrationTest`: CRUD completo com `@SpringBootTest` em porta aleatória, filtros, limites (1 e 5000), 400/404/422 e verificação de que requisições rejeitadas não alteram os dados.
 - `EventoServiceTest`: regra de negócio e filtro isolados, com repositório falso injetado pelo construtor.
 - `PessoaServiceTest`: cadastro de pessoas isolado (validação de e-mail, evento inexistente, filtro por nome e preservação do ID).
-- `RouterTest`, `ApplicationContextTest`, `UnexpectedErrorIntegrationTest`: testes do framework.
+- `UnexpectedErrorIntegrationTest`: erro inesperado devolve 500 em JSON, sem vazar detalhes internos.
 
 ## Uso de IA
 

@@ -1,7 +1,7 @@
 package br.com.minispring.exemplo.service;
 
-import br.com.minispring.framework.annotation.Service;
-import br.com.minispring.framework.web.HttpException;
+import org.springframework.stereotype.Service;
+import br.com.minispring.exemplo.web.HttpException;
 import br.com.minispring.exemplo.model.*;
 import br.com.minispring.exemplo.repository.EventoRepository;
 

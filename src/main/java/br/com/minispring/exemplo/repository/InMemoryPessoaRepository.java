@@ -1,6 +1,6 @@
 package br.com.minispring.exemplo.repository;
 
-import br.com.minispring.framework.annotation.Repository;
+import org.springframework.stereotype.Repository;
 import br.com.minispring.exemplo.model.Pessoa;
 
 import java.util.*;

@@ -4,7 +4,7 @@ import br.com.minispring.exemplo.model.Evento;
 import br.com.minispring.exemplo.model.EventoInput;
 import br.com.minispring.exemplo.repository.EventoRepository;
 import br.com.minispring.exemplo.service.EventoService;
-import br.com.minispring.framework.web.HttpException;
+import br.com.minispring.exemplo.web.HttpException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

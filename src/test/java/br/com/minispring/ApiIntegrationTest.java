@@ -1,9 +1,10 @@
 package br.com.minispring;
 
-import br.com.minispring.framework.MiniApplication;
-import br.com.minispring.framework.context.AppConfig;
+import br.com.minispring.exemplo.Application;
 import com.fasterxml.jackson.databind.*;
 import org.junit.jupiter.api.*;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import java.net.URI;
 import java.net.http.*;
 import java.time.Duration;
@@ -11,30 +12,28 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    properties = "app.name=Centro Cultural de teste")
 class ApiIntegrationTest {
-    private MiniApplication app;
+    @LocalServerPort private int port;
     private HttpClient client;
     private final ObjectMapper json = new ObjectMapper();
 
     @BeforeEach void start() throws Exception {
-        var properties = new Properties();
-        properties.setProperty("app.name", "Centro Cultural de teste");
-        app = MiniApplication.start("br.com.minispring.exemplo", new AppConfig(properties, Map.of()), 0);
         client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5)).build();
     }
     @AfterEach void stop() throws Exception {
         if (client != null) client.close();
-        if (app != null) app.close();
     }
     private HttpRequest request(String method, String path, String body, String contentType) {
-        var builder = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + app.port() + path)).timeout(Duration.ofSeconds(10));
+        var builder = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + path)).timeout(Duration.ofSeconds(10));
         if (contentType != null) builder.header("Content-Type", contentType);
         return builder.method(method, body == null ? HttpRequest.BodyPublishers.noBody() : HttpRequest.BodyPublishers.ofString(body)).build();
     }
     private HttpResponse<String> send(String method, String path, String body) throws Exception {
         return client.send(request(method, path, body, body == null ? null : "application/json"), HttpResponse.BodyHandlers.ofString());
     }
-    @Test void fullCrudThroughRealJetty() throws Exception {
+    @Test void fullCrudThroughRealServer() throws Exception {
         assertEquals("Centro Cultural de teste", json.readTree(send("GET", "/", null).body()).get("application").asText());
         assertEquals(200, send("GET", "/health", null).statusCode());
         var created = send("POST", "/eventos", "{\"titulo\":\" Festival de Música \",\"participantes\":40}");
@@ -75,7 +74,8 @@ class ApiIntegrationTest {
         assertEquals(404, send("GET", "/inexistente", null).statusCode());
         var response = send("PATCH", "/eventos/1", "{}");
         assertEquals(405, response.statusCode());
-        assertEquals("DELETE, GET, PUT", response.headers().firstValue("Allow").orElseThrow());
+        var allow = Set.of(response.headers().firstValue("Allow").orElseThrow().split(",\\s*"));
+        assertEquals(Set.of("GET", "PUT", "DELETE"), allow);
     }
     @Test void concurrentRequestsProduceUniqueIds() throws Exception {
         var futures = new ArrayList<CompletableFuture<HttpResponse<String>>>();

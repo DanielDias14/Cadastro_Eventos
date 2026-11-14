@@ -1,37 +1,41 @@
 package br.com.minispring.exemplo.controller;
 
-import br.com.minispring.framework.annotation.*;
-import br.com.minispring.framework.web.HttpResult;
-import br.com.minispring.exemplo.model.*;
+import br.com.minispring.exemplo.model.Pessoa;
+import br.com.minispring.exemplo.model.PessoaInput;
 import br.com.minispring.exemplo.service.PessoaService;
+import jakarta.validation.Valid;
+import java.net.URI;
 import java.util.List;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@RestController("/pessoas")
-public final class PessoaController {
+@RestController
+@RequestMapping("/pessoas")
+public class PessoaController {
     private final PessoaService service;
 
     public PessoaController(PessoaService service) { this.service = service; }
 
-    @Route(method = "GET")
-    public List<Pessoa> list(@RequestParam("nome") String nome) { return service.list(nome); }
+    @GetMapping
+    public List<Pessoa> list(@RequestParam(defaultValue = "") String nome) { return service.list(nome); }
 
-    @Route(method = "GET", path = "/{id}")
-    public Pessoa get(@PathVariable("id") long id) { return service.get(id); }
+    @GetMapping("/{id}")
+    public Pessoa get(@PathVariable long id) { return service.get(id); }
 
-    @Route(method = "POST")
-    public HttpResult create(@RequestBody PessoaInput input) {
+    @PostMapping
+    public ResponseEntity<Pessoa> create(@Valid @RequestBody PessoaInput input) {
         Pessoa pessoa = service.create(input);
-        return HttpResult.created("/pessoas/" + pessoa.id(), pessoa);
+        return ResponseEntity.created(URI.create("/pessoas/" + pessoa.id())).body(pessoa);
     }
 
-    @Route(method = "PUT", path = "/{id}")
-    public Pessoa update(@PathVariable("id") long id, @RequestBody PessoaInput input) {
+    @PutMapping("/{id}")
+    public Pessoa update(@PathVariable long id, @Valid @RequestBody PessoaInput input) {
         return service.update(id, input);
     }
 
-    @Route(method = "DELETE", path = "/{id}")
-    public HttpResult delete(@PathVariable("id") long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable long id) {
         service.delete(id);
-        return HttpResult.noContent();
+        return ResponseEntity.noContent().build();
     }
 }

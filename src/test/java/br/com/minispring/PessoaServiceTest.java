@@ -5,7 +5,7 @@ import br.com.minispring.exemplo.model.PessoaInput;
 import br.com.minispring.exemplo.repository.InMemoryEventoRepository;
 import br.com.minispring.exemplo.repository.InMemoryPessoaRepository;
 import br.com.minispring.exemplo.service.PessoaService;
-import br.com.minispring.framework.web.HttpException;
+import br.com.minispring.exemplo.web.HttpException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

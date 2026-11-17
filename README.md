@@ -12,34 +12,6 @@ API REST em Java para cadastrar os eventos de um centro cultural, construída co
 | Jady Wéllyda |
 | João Vitor Lemos |
 
-## Migração: Mini Spring → Spring Boot
-
-Este projeto foi migrado do **Mini Spring** (framework próprio feito pelo grupo, sobre Jetty) para o **Spring Boot**, mantendo o tema, as funcionalidades, as rotas e as regras de negócio. A versão anterior continua disponível na branch [`mini-spring`](../../tree/mini-spring) para comparação.
-
-### Principais mudanças
-
-| Aspecto | Antes (Mini Spring) | Agora (Spring Boot) |
-|---------|---------------------|---------------------|
-| Build / dependências | `pom.xml` com Jetty, Jackson, slf4j-simple e JUnit declarados um a um | `spring-boot-starter-parent` + starters `web`, `validation` e `test` |
-| Inicialização | `MiniApplication.run(...)` | `@SpringBootApplication` + `SpringApplication.run(...)` |
-| Servidor HTTP | Jetty configurado manualmente | Tomcat embutido, configurado por `application.properties` |
-| Container de DI | `ApplicationContext` e `ComponentScanner` próprios | Container do Spring (varredura de `@RestController`, `@Service`, `@Repository`) |
-| Anotações | `@Route`, `@Component`, `@RequestBody`, `@RequestParam`, `@PathVariable`, `@Value` próprias | `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping` e as anotações equivalentes do Spring |
-| Roteamento e JSON | `DispatcherServlet` próprio e conversão manual com Jackson | `DispatcherServlet` do Spring MVC e conversão automática de JSON |
-| Validação | `Validator` próprio com `@NotBlank` e `@Positive` | Bean Validation (`jakarta.validation`) com `@Valid` nos controllers |
-| Respostas HTTP | `HttpResult` | `ResponseEntity` (201 com `Location`, 204 sem corpo) |
-| Tratamento de erros | Tratamento centralizado dentro do framework próprio | `@RestControllerAdvice` (`GlobalExceptionHandler`), mantendo o mesmo formato de erro |
-| Log e `X-Request-Id` | `LoggingInterceptor` / `RequestInterceptor` | `RequestIdFilter` (`OncePerRequestFilter`) |
-| Testes | Servidor Mini Spring iniciado no teste | `@SpringBootTest` com porta aleatória |
-
-### O que não mudou
-
-- Rotas, códigos de status e formato das respostas de erro (`timestamp`, `status`, `message`, `path`, `details`, `requestId`).
-- Regra de negócio: no máximo **5.000 participantes** por evento (422 quando excedida).
-- Camadas Controller → Service → Repository (interface), com injeção por **construtor**.
-- Armazenamento em memória (`ConcurrentHashMap` + `AtomicLong`).
-- Os pacotes (`br.com.minispring.exemplo...`) foram mantidos para facilitar a comparação entre as duas versões.
-
 ## Domínio
 
 O tema sorteado foi **Cadastro de eventos**. Cada evento do centro cultural (festival, mostra de teatro, sarau, exposição...) tem:
